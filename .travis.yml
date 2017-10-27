@@ -16,10 +16,9 @@ notifications:
 
 language: generic
 jobs:
-  language: generic
   include:
     - stage: Install dependencys
-      script: gradle stage ./gradlew stage
+      script: gradle stage
     - stage: Bulding & Testing
       script: gradle build
     - stage: Deploy
