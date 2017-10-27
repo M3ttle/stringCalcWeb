@@ -1,3 +1,4 @@
+language: generic
 before_cache:
 - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
 - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -15,9 +16,11 @@ notifications:
     use_notice: true
 env:
   global:
-  - secure: X3jWbWQ5xaHGXsh/KDZPClzzcFjMef1/zYRQpbsEv4Ej+XCDW1q+UHFvU5xXHA9PBIEnD8EzpSYvKFNH/egluSjOk5sY4V639hCGuczEaOOayvmjrcUgVvHzopvcYE04BHMaxtcBVH86LNF0pCD/wFuPZ2tWcuehKC0kontNrgT3E79/zi6PcXTyiWQAkEPsHCEm6yWwntCHQjxQ7tfSwwAhldtFJw5JQ/hV0ITIALlpcrCKmAAiD5stwimLiovfFA/2xPdm689lWk36xs4SDWd1rcxaFE18IDwz5B2P45EwskywzqNn9ng5dB4LVWJBTN/WzaSQ4w64L7wgh/hKwMduwKhGRhQIIWwNq4HHggDwFZbQY6IjB+i7M5KjdsCWFY92/X2xxiJ68daHHPAagqIHroA9eChn0OgPXoCPqwjPHwdB1nMx8IjaN4NgPPvWorL3WIOSo9rJ3IafZzJSVIop6pPB4UCg5M71DB6goN0orn0EgTKrOfzj/s+Sjk/Vel9sRA/TimfbThGZpg2zz368JqPQYmqAhFtmiB37+nRAayWzuOqRFB3RFFeRiU6AchV8X0HHDJtovLjmpuzpavIZGXG9icUO0r6bbsUk5+taTdLMmKf2ZN8u3J6AXoA6IMq7bwi1e6t2Sn9ArpWayhJiRk/MBjFy+YYEWHIrNmw=
-  - secure: Ui6FHSaKLywqrpdBlqgPR4t4OHdG48jwLPHzOooYX9AqPgUd2d4gi1+9hazA2IjC3JP/ZmI2+FBdNdqqzkvbiHiwkaAoXAVzWVnZBaGrl+SI4+A2iFNtvRDlAFrk+bPoM0TT1VPdy1xshj1/TV/alaQ0+uMosec7Ph0drEBRQlrQnq6VyjvV9awMTVzcDwdcC5CdcD+VU/junaUh9WfMdGvAL8NYg11+lpsOca/SsrRyvz4LP2UtT4oRB0TM1a0B6hyf8HI/iOdmzJdjJyRezNOYMznWaoPaVbDPrmkSse5672KJBRUWBYKeL11SlI4AZf2vO+P7q0L4Uq7W2O9mEK7fNR6MFlR5JHpSLmhZ2tQ/PBKCRUdKTjobj8vBTGoDhAXEaHkSJF/MImvWEbnQft+DUUOZ+0cRERAF2w5B3sFEojC/+M1rbwKrBB0vJ/J/gWhL0WBwuuJMP8Shh46me06fy9+R2uajcVj/MkTQPv6YdoONC4pGHKJxCVG35Yulg7L7N+EBYTdhXAclcoLD+dT2cvEInpYd0TeD+5JOXKZq7RqdJ638pUPXvP8EFQfbTzNNF7qxjDjh1TTCjTwULplafSx44l/0NrE1v3awp95RKkBgLl2sZBQghYvmjVblzkWvY868/iC30vw+dfc6TuThSLcKHSNvCIVixsTu4JE=
-language: generic
+  - secure: CwW39j+ogAZDdeSmgT4cUPvl7L1J8z5AKC/8pSN4VszVdNrLGpTny8NdbLE6WgSBA7ed1VRIrhBm0ssfbPa4KN2re8eP2YekpNmgkSouRg/BAbR0rrRUdA5oB2S3KGA5pna2bEhv/yNUV1eC4XVxRcnn0Z7qgpgMgGVgnIXfR2EBEYvqGeDopaFvdCmu0+mAjKQPPbPvWD1/+H+PTGV6vwoQhcDZMNG3gJJQcPhn1XqRwxeOD6HFfROv/K6kdOS7HXIBhfWpNmT1UOCrr4dP0CP9s0f9aA7Tc7Y/clcNIp/gNmHAXuS293UL8iu4UBWcp+j360SvLZHCHRsy+G5eDVgTFcr5rN7wiRpw+beJb/ZK1UH+YmvERG04/JLDwbi5sLWKnyQf8G9BnL+BbrSWzcEAuuAiv2h0FaYND4UKHRgDl0CG4MwilvS1NCNnaI81bJgbMhtCHd8kC/TwkU69pnvyaKZC7NRIZOA+Kl+BY6WFuCOxnm41gNta6Uq0nbTDiEliCOZ7Ibia2NYHEZ3TnnJsT+jbItCTEuNEcRsFNW9xGsrWxdaLFVncJ0Vj0zshdnOZVLWXwA9pXqL9C5Xe+ne3R/Zru1O7IAqFWI66JO7t8WaE5EnXoR2qZJLR8KDnmwpb7d6o1RSISaeKdR+wtGo5PKUn7thkLYNF3DF2PCk=
+  - secure: c9JEbvzLN8Z/L4CHmfRgBJ4r1XdBneaGuzeuU/z2HJJk7mIu92ALunxLXjFByNPogoIaWxQ7ip8zPOxqOZXzY6ARf1vU9HUsJabLC4SLE11dBz2YvzR7RXUGu9SOY4rhXxp3Jo/TtCjpu9T18TRkpVciRUg51Jy219Kxpl3RZFodeCbDRvFCevDqe34j8RjXj3wgwR/1MkaaU1zYnv7KGrPGfpz0/ayKE3CTCvQAArrMOKI04zM8zcxQIFjK4ALh9Ge/6BQExMrkahE8Z7foq5Q1Mrx+Cdvnpfcte7Iw6hws0oHwV/ePvnMuiJAQ70HiQsecIgDxdShcAr5SIgGNV8cROV6iud7/vK0NLLTQfRYgtwATlS+x3psDEQNnVF//reomW6Q9RIzomM4YV3+lETV2xNLKwAUysMgFYTukkdV+UMUu4olHNb6w8PGg1SBD9phd3jcm3K8ar9g73tpr7CnbgqUJ5bHffXbhuScsfn3/sE3Ye47wCpVlFSOvUStALy7JFGLHUGjThlaPAI207Fi06MbmR6reVs/9H4V8BoqlmOIKxnFtJq2GoYSbNBO7/D8OT2Tb0+ua2JSEz1VpNftervJZuAABJgiQvsg5rg0NyBkaxGeB7KxYPuMpGTusL5/yDQzcbBmtZ0n5/+3zxr5uGmznkMtj13u43tiIKrM=
+os:
+- linux
+- osx
 jobs:
   include:
   - stage: Install dependencys
@@ -33,5 +36,5 @@ jobs:
       app: stringcalc2
 after_success:
   jobs:
-    - stage: Pushing dev to GitHub master
-      script: "./merge.sh $GIT_USER $GIT_PASS"
+  - stage: Pushing dev to GitHub master
+    script: "./merge.sh $GIT_USER $GIT_PASS"
