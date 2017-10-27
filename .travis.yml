@@ -13,4 +13,3 @@ deploy:
   app: stringcalc2
   notifications:
     email:false
-    irc: "chat.freenode.net#skolarapp"
