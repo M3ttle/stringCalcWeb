@@ -15,8 +15,3 @@ deploy:
     irc: "irc.quakenet.org#skolarapp"
       on_failure: always
       on_success: always
-      use_notice: true
-      template:
-        - "%{repository} (%{commit}) : %{message} %{foo} "
-        - "Build details: %{build_url}"
-        
