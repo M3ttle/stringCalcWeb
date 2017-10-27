@@ -14,9 +14,9 @@ notifications:
     on_failure: always # default: always
     use_notice: true
 
-language: java
+language: generic
 jobs:
-  language: java
+  language: generic
   include:
     - stage: Install dependencys
       script: gradle stage ./gradlew stage
