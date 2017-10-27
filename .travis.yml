@@ -14,10 +14,3 @@ deploy:
   notifications:
     email:false
     irc: "chat.freenode.net#skolarapp"
-      on_failure: always
-      on_success: always
-      use_notice: true
-      template:
-        - "%{repository} (%{commit}) : %{message} %{foo} "
-        - "Build details: %{build_url}"
-        
