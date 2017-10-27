@@ -13,6 +13,8 @@ notifications:
     on_success: always # default: always ... change
     on_failure: always # default: always
     use_notice: true
+
+language: java
 jobs:
   language: java
   include:
