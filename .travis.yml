@@ -1,4 +1,3 @@
-language: java
 before_cache:
 - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
 - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -15,9 +14,12 @@ notifications:
     on_failure: always # default: always
     use_notice: true
 jobs:
+  language: java
   include:
-    - stage: Testing
-      script: build
+    - stage: Install dependencys
+      script: gradle stage ./gradlew stage
+    - stage: Bulding & Testing
+      script: gradle build
     - stage: Deploy
       deploy: &heroku
         provider: heroku
