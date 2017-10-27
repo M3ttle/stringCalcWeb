@@ -18,7 +18,7 @@ language: generic #bug in Travis Jobs
 jobs:
   include:
     - stage: Install dependencys
-      script: gradle stage
+      script: "./gradlew stage"
     - stage: Bulding & Testing
       script: "./gradlew build"
     - stage: Deploy
