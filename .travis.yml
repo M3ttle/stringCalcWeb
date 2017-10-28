@@ -47,4 +47,4 @@ os:
 
 after_success:
   - "chmod a+x travisautomerge.bat"
-  - "BRANCHES_TO_MERGE_REGEX='^f/' BRANCH_TO_MERGE_INTO=develop GITHUB_REPO=cdown/srt travisautomerge.bat"
+  - "BRANCHES_TO_MERGE_REGEX='^dev/' BRANCH_TO_MERGE_INTO=develop GITHUB_REPO=cdown/srt travisautomerge.bat"
