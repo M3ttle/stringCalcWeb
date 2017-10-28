@@ -14,16 +14,15 @@ TO_BRANCH="master"
 
 # Get the current branch
 export PAGER=cat
-#CURRENT_BRANCH=$(git log -n 1 --pretty=%d HEAD | cut -d"," -f3 | cut -d" " -f2 | cut -d")" -f1)
-#echo "current branch is '$CURRENT_BRANCH'"
-CURRENT_BRANCH="dev"
+CURRENT_BRANCH=$(git log -n 1 --pretty=%d HEAD | cut -d"," -f3 | cut -d" " -f2 | cut -d")" -f1)
+echo "current branch is '$CURRENT_BRANCH'"
+#CURRENT_BRANCH="dev"
 
 # Create the URL to push merge to 
 URL=$(git remote -v | head -n1 | cut -f2 | cut -d" " -f1)
 echo "Repo url is $URL"
 
 #PUSH_URL="https://$GIT_USER:$GIT_PASS@${URL:6}"
-#PUSH_URL="https://github.com/M3ttle/stringCalcWeb.git"
 PUSH_URL="git@github.com:M3ttle/stringCalcWeb.git"
 
 if [ "$CURRENT_BRANCH" = "$FROM_BRANCH" ] ; then
