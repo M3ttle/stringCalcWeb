@@ -43,4 +43,4 @@ before_script:
 jobs:
   include:
   - stage: Pushing dev to GitHub master
-    script: - "BRANCHES_TO_MERGE_REGEX='^dev/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=cdown/srt /tmp/travisautomerge.bat"
+    script: "BRANCHES_TO_MERGE_REGEX='^dev/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=cdown/srt /tmp/travisautomerge.bat"
