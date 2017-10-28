@@ -21,7 +21,7 @@ env:
 os:
 - linux
 #- osx
-
+before_script: chmod +x merge.sh
 
 #jobs:
 #  include:
@@ -39,5 +39,6 @@ os:
 
 #after_success:
 jobs:
-- stage: Pushing dev to GitHub master
-  script: "./merge.sh $GIT_USER $GIT_PASS"
+  include:
+  - stage: Pushing dev to GitHub master
+    script: "./merge.sh $GIT_USER $GIT_PASS"
