@@ -47,7 +47,4 @@ os:
 
 after_success:
   - "chmod a+x travisautomerge.bat"
-  - "BRANCHES_TO_MERGE_REGEX='dev'"
-  - "BRANCH_TO_MERGE_INTO=master"
-  - "GITHUB_REPO=M3ttle/stringCalcWeb"
-  - ./travisautomerge.bat
+  - "BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat"
