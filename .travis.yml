@@ -20,7 +20,7 @@ env:
   - secure: c9JEbvzLN8Z/L4CHmfRgBJ4r1XdBneaGuzeuU/z2HJJk7mIu92ALunxLXjFByNPogoIaWxQ7ip8zPOxqOZXzY6ARf1vU9HUsJabLC4SLE11dBz2YvzR7RXUGu9SOY4rhXxp3Jo/TtCjpu9T18TRkpVciRUg51Jy219Kxpl3RZFodeCbDRvFCevDqe34j8RjXj3wgwR/1MkaaU1zYnv7KGrPGfpz0/ayKE3CTCvQAArrMOKI04zM8zcxQIFjK4ALh9Ge/6BQExMrkahE8Z7foq5Q1Mrx+Cdvnpfcte7Iw6hws0oHwV/ePvnMuiJAQ70HiQsecIgDxdShcAr5SIgGNV8cROV6iud7/vK0NLLTQfRYgtwATlS+x3psDEQNnVF//reomW6Q9RIzomM4YV3+lETV2xNLKwAUysMgFYTukkdV+UMUu4olHNb6w8PGg1SBD9phd3jcm3K8ar9g73tpr7CnbgqUJ5bHffXbhuScsfn3/sE3Ye47wCpVlFSOvUStALy7JFGLHUGjThlaPAI207Fi06MbmR6reVs/9H4V8BoqlmOIKxnFtJq2GoYSbNBO7/D8OT2Tb0+ua2JSEz1VpNftervJZuAABJgiQvsg5rg0NyBkaxGeB7KxYPuMpGTusL5/yDQzcbBmtZ0n5/+3zxr5uGmznkMtj13u43tiIKrM=
 os:
 - linux
-- osx
+#- osx
 jobs:
   include:
   - stage: Install dependencys
@@ -34,7 +34,7 @@ jobs:
       api_key:
         secure: ns8cTlUbLBtXN1mS6yFOUBh5a+yeG4d6TAXpKyJ3Zt98zLdqikvRh6+UHUHf9RYTxhRlZAfqoRMF53NmUSuPfgny7D/tHBjL3dYGt8cCVsVhZ/Bl73bnXlHsSj9kXAB96JSDVKfRJAuPL/ObDPLycRZljPQAOwItPxZj8svNQgYq7mXS2o6WKIEEz39J4mdCvD1IYUDnBmb0aY9epQ0wrIAyfrR3ePt0WzEWLqjGb8AeVvF9+6CP/s54OC1rYgtWzltfQ0yY2FvHRMeMp+OS/MDUkzkA02We8Ek6p9v9UP5LL1YprKftvkl450f/NPg3Eo3Ul9463uY9kbvwKvK+u7Y9fi4kpD3VUokzRKa3mtb3WOkTMOUU5V3bX2DZp1U/UYbIxfu0hiaMUVVcgLQiWiwDMPLGlaEXjgPr9mqf9YAi1jjiCsD2WUXe8iykr+EHSQHpvLYyNNrfANuyfz5AvSgmPzrj4PaXZumhSNz25MMpHXWeWVX7twZ0p2CjaIk3PMYpyg3+ujYH0v/ymz1h0RbmKQlkw8k9oeKSLzaRY/jMkCMSZdq99rR0dNbk+6Zd+g7F22nsowjV4/HknKKkoRwoeB8mO64eZXgJRCG7ApC2OymjmW6d63m0EhGIGOn9WIR5NknSsQdOTHdhkKrZRF0NkvkPjd2IbOUQniUQ2H0=
       app: stringcalc2
-      
+
 after_success:
   jobs:
   - stage: Pushing dev to GitHub master
