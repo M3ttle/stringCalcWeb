@@ -22,8 +22,8 @@ env:
 os:
 - linux
 #- osx
-before_script:
-- "chmod a+x /tmp/travisautomerge.bat"
+#before_script:
+#- "chmod a+x /tmp/travisautomerge.bat"
 
 #jobs:
 #  include:
@@ -40,7 +40,11 @@ before_script:
 #      app: stringcalc2
 
 #after_success:
-jobs:
-  include:
-  - stage: Pushing dev to GitHub master
-    script: "BRANCHES_TO_MERGE_REGEX='^dev/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=cdown/srt /tmp/travisautomerge.bat"
+#jobs:
+#  include:
+#  - stage: Pushing dev to GitHub master
+#    script: "BRANCHES_TO_MERGE_REGEX='^dev/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=cdown/srt /tmp/travisautomerge.bat"
+
+after_success:
+  - "chmod a+x travisautomerge.bat"
+  - "BRANCHES_TO_MERGE_REGEX='^f/' BRANCH_TO_MERGE_INTO=develop GITHUB_REPO=cdown/srt travisautomerge.bat"
