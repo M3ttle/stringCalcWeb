@@ -17,6 +17,7 @@ fi
 # Since Travis does a partial checkout, we need to get the whole thing
 repo_temp=$(mktemp -d)
 git clone "https://github.com/$GITHUB_REPO" "$repo_temp"
+echo "Running git clone https://github.com/$GITHUB_REPO"
 
 # shellcheck disable=SC2164
 cd "$repo_temp"
