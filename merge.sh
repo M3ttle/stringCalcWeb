@@ -22,9 +22,9 @@ CURRENT_BRANCH="dev"
 URL=$(git remote -v | head -n1 | cut -f2 | cut -d" " -f1)
 echo "Repo url is $URL"
 
-PUSH_URL="https://$GIT_USER:$GIT_PASS@${URL:6}"
+#PUSH_URL="https://$GIT_USER:$GIT_PASS@${URL:6}"
 #PUSH_URL="https://github.com/M3ttle/stringCalcWeb.git"
-#PUSH_URL="git@github.com:M3ttle/stringCalcWeb.git"
+PUSH_URL="git@github.com:M3ttle/stringCalcWeb.git"
 
 if [ "$CURRENT_BRANCH" = "$FROM_BRANCH" ] ; then
     # Checkout the dev branch
