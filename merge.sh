@@ -32,7 +32,7 @@ if [ "$CURRENT_BRANCH" = "$FROM_BRANCH" ] ; then
     #echo "Checking out $TO_BRANCH..." && \
 
     # Checkout the latest stable
-    git fetch origin $TO_BRANCH:$TO_BRANCH && \
+    #git fetch origin $TO_BRANCH:$TO_BRANCH && \
     git checkout $TO_BRANCH && \
 
     # Merge the dev into latest stable
