@@ -24,7 +24,7 @@ os:
 #- osx
 
 
-if: branch = dev
+
 script: ./gradlew stage
 script: gradle test
 
