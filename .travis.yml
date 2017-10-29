@@ -30,10 +30,12 @@ os:
 script: 
 - ./gradlew stage
 
+- chmod a+x travisautomerge.bat
 - if [ "$TRAVIS_BRANCH" == "dev" ]; then
   echo "Merging dev into stage";
-  chmod a+x travisautomerge.bat;
   BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=stage GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat;
   echo "All done, quitting now"; exit 0; fi
 
-#[[ $TRAVIS_PULL_REQUEST == “false” ]] && [[ $TRAVIS_BRANCH == “master” ]]
+- if [ "$TRAVIS_BRANCH" == "stage" ]; then
+  echo "Merging stage into master";
+  BRANCHES_TO_MERGE_REGEX='stage' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat; fi
