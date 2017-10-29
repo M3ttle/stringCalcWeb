@@ -26,7 +26,15 @@ env:
   - secure: "YSVSLcH0c/VGLLc0GshhEqK4FybnLGsT2An0IOJa8tDa03CoLjhLHImNHHsigRQ5VtGzW77bDPB/DujG/F6JaBD6Ac8TiyFgkH3agoY2IDgtY++68959YEw8vT4pGu2H8FHC1EKn80xXI/eFF50ZFpNGXLp/Ve4U74gqJ2wPqGQVtCsZkzs8kGPvZ2+6f37St2kMeeCt3iq9jn/bJZrOzImcvZ4JYEKCbJ2wYgQHvAENrCFuAY3JYNsOUvP9wUB9LNWKeQNGaAezvlXi4Q88OIakZt4Gx56CrYPOJyxzCQiaAfpODbkT0bwSDFifslVCHEsZll2G2T3SmNkoK2V+ldqGqaJUUGKrRUnt/I85u4sfY6nmJQH9ZsSYqVbNzfFRvacggrdScZ17lV6k5GFPtdpL0+9OBnHqWMgpW/pnLAWt8YVW/JKx1XyR7crVlZT0DrMNZHUvOLhP7gI6SvDA9T3KnInZFcs3RvLeT3Rm86KfWbHbKl83gIIBpMXUcbYCy3FNfd8GY0wHJMpF+Gvby9v3MQ8nv488vTMDFDjnwGfGBE4dm6lMGNJ0zwh7MmPRNGi6W+6yGRkN4GGSRsXKbvCAUrISFP24TM+QCz/VK5zNZcfFtAlPpL+UtAYZE1pJXd3jcGCSAnRqzKb+2Sj5/XCnCQe0vJtGP6cPk/V35Ow="
 os:
 - linux
-#- osx
+
+install:
+- sudo apt-get install unzip;
+- wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip && sudo unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/;
+
+addons:
+  chrome: stable
+
+
 script: 
 - ./gradlew stage
 - ./gradlew test
