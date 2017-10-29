@@ -26,10 +26,11 @@ stages:
   - compile
   - test
   - name: deploy & merge master
-    if: branch = dev
+    if: branch = stage
 
 jobs:
   include:
+  - if: branch = stage
   - stage: compile
     script: "./gradlew stage"
   - stage: test
@@ -45,3 +46,7 @@ jobs:
     after_success:
       script: "chmod a+x travisautomerge.bat"
       script: "BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat"
+
+if: branch = dev
+script: ./gradlew stage
+script: gradle test
