@@ -26,10 +26,11 @@ os:
 
 
 
-
 stages:
   - name: compile & test
-  - name: deploy & merge master
+  - name: deploy & merge to stage
+    if: branch = dev
+  - name: deploy & merge to master
     if: branch = stage
 
 jobs:
@@ -37,6 +38,13 @@ jobs:
   - stage: compile & test
     script: ./gradlew stage
     script: gradle test
+
+  - stage: deploy & merge to stage
+    script: skip
+    after_success:
+      script: "chmod a+x travisautomerge.bat"
+      script: "BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=stage GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat"
+
 
   - stage: deploy & merge master
     script: skip #testing is already done
@@ -47,5 +55,5 @@ jobs:
       app: stringcalc2
     after_success:
       script: "chmod a+x travisautomerge.bat"
-      script: "BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat"
+      script: "BRANCHES_TO_MERGE_REGEX='stage' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat"
 
