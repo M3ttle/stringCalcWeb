@@ -28,13 +28,10 @@ os:
 - linux
 
 install:
-- wget -qO- http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip | jar xvf -d ~/
-- unzip ~/chromedriver_linux64.zip
-- rm ~/chromedriver*.zip
-- sudo mv ~/chromedriver /usr/local/share/
-- sudo chmod +x /usr/local/share/chromedriver
-- sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
-- sudo yum install Xvfb
+- sudo apt-get install unzip;
+- wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip && sudo unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/;
+
+- sudo apt-get install Xvfb
 addons:
   chrome: stable
 
