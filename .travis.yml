@@ -31,8 +31,6 @@ script:
 - ./gradlew stage
 - ./gradlew test
 
-
-
 after_success:
   - chmod a+x travisautomerge.bat
   - if [ "$TRAVIS_BRANCH" == "dev" ]; then
