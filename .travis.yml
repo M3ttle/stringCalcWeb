@@ -34,7 +34,6 @@ script:
 
 
 after_success:
-  script:
   - chmod a+x travisautomerge.bat
   - if [ "$TRAVIS_BRANCH" == "dev" ]; then
     echo "Merging dev into stage";
