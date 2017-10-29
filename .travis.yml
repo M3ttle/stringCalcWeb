@@ -25,16 +25,16 @@ os:
 
 
 
+if: branch = dev
+  stages:
+    - name: compile & test
+    - name: deploy & merge to stage
 
-stages:
-  - name: compile & test
-  - name: deploy & merge to stage
-    if: branch = dev
-
-stages:
-  - name: compile & test
-  - name: deploy & merge to master
-    if: branch = stage
+if: branch = stage
+  stages:
+    - name: compile & test
+    - name: deploy & merge master
+    
 
 jobs:
   include:
