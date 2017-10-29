@@ -25,15 +25,16 @@ os:
 stages:
   - compile
   - test
-  - deploy
+  - name: deploy
+    if: branch = dev
 
 jobs:
   include:
-  - stage: Install dependencys
+  - stage: compile
     script: "./gradlew stage"
-  - stage: Bulding & Testing
+  - stage: test
     script: "./gradlew build"
-  - stage: Deploy & Merge to Master
+  - stage: deploy
     script: skip
 
     deploy:
