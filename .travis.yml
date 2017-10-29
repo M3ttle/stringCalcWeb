@@ -29,7 +29,6 @@ stages:
 
 jobs:
   include:
-  - if: branch = dev
   - stage: Install dependencys
     script: "./gradlew stage"
   - stage: Bulding & Testing
