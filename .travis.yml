@@ -36,9 +36,9 @@ jobs:
   include:
   - stage: compile & test
     script: "./gradlew stage gradle test"
-  - stage: deploy & merge master
-    script: skip
 
+  - stage: deploy & merge master
+    script: skip #testing is already done
     deploy:
       provider: heroku
       api_key:
