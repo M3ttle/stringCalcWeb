@@ -34,6 +34,7 @@ if: branch = stage
 stages:
   - name: compile & test
   - name: deploy & merge master
+   
     
 
 jobs:
