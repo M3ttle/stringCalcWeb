@@ -27,12 +27,12 @@ os:
 
 
 # Faster than stage jobs
-
+if: branch = dev
 script: ./gradlew stage
 script: gradle test
 
 
-if: branch = stage OR branch = master
+
 stages:
   - compile
   - test
