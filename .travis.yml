@@ -29,13 +29,16 @@ os:
 #- osx
 script: 
 - ./gradlew stage
+- ./gradlew test
 
-- chmod a+x travisautomerge.bat
-- if [ "$TRAVIS_BRANCH" == "dev" ]; then
-  echo "Merging dev into stage";
-  BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=stage GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat;
-  echo "All done, quitting now"; exit 0; fi
+after_success:
+  - chmod a+x travisautomerge.bat
+  - if [ "$TRAVIS_BRANCH" == "dev" ]; then
+    echo "Merging dev into stage";
+    BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=stage GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat;
+    echo "All done, quitting now"; exit 0; fi
 
-- if [ "$TRAVIS_BRANCH" == "stage" ]; then
-  echo "Merging stage into master";
-  BRANCHES_TO_MERGE_REGEX='stage' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat; fi
+  - if [ "$TRAVIS_BRANCH" == "stage" ]; then
+    echo "Merging stage into master";
+    BRANCHES_TO_MERGE_REGEX='stage' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat; fi
+
