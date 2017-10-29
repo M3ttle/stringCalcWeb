@@ -25,6 +25,7 @@ os:
 
 jobs:
   include:
+  - # require the branch name to be dev
     if: branch = dev
   - stage: Install dependencys
     script: "./gradlew stage"
