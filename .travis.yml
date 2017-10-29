@@ -31,8 +31,8 @@ jobs:
   include:
   - stage: Install dependencys
     script: "./gradlew stage"
-  - stage: Bulding & Testing
-    script: "./gradlew build"
+  #- stage: Bulding & Testing
+  #  script: "./gradlew build"
   - stage: Deploy
     script: skip
 
