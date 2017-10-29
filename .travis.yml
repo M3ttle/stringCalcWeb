@@ -40,14 +40,11 @@ jobs:
   - stage: compile & test
     script: ./gradlew stage
     script: gradle test
-
   - stage: deploy & merge to stage
     script: skip
     after_success:
       script: "chmod a+x travisautomerge.bat"
       script: "BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=stage GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat"
-
-
   - stage: deploy & merge master
     script: skip #testing is already done
     deploy:
