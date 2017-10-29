@@ -28,8 +28,8 @@ script:
 - ./gradlew stage
 
 - if [ "$TRAVIS_BRANCH" == "dev" ]; then
-  echo "Merging dev into stage"
-  chmod a+x travisautomerge.bat
+  echo "Merging dev into stage";
+  chmod a+x travisautomerge.bat;
   BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=stage GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat;
   echo "All done, quitting now"; exit 0; fi
 
