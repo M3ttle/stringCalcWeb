@@ -28,7 +28,7 @@ os:
 - linux
 
 install:
-- wget -qO- http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip | jar xvf  ~/
+- wget -qO- http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip | jar xvf -d ~/
 - unzip ~/chromedriver_linux64.zip
 - rm ~/chromedriver*.zip
 - sudo mv ~/chromedriver /usr/local/share/
@@ -38,7 +38,7 @@ install:
 addons:
   chrome: stable
 
-  
+
 script: 
 - ./gradlew stage
 - ./gradlew test
