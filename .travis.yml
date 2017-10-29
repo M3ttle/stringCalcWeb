@@ -1,4 +1,4 @@
-language: java
+language: generic
 before_cache:
 - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
 - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -25,7 +25,7 @@ os:
 stages:
   - compile
   - test
-  - name: deploy
+  - name: deploy & merge master
     if: branch = dev
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
   - stage: compile
     script: "./gradlew stage"
   - stage: test
-    script: "./gradlew build"
+    script: "gradle test"
   - stage: deploy
     script: skip
 
