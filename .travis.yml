@@ -44,10 +44,8 @@ jobs:
     script: gradle test
   
   - stage: Merge to stage
-    script: skip
-    after_success:
-      script: "chmod a+x travisautomerge.bat"
-      script: "BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=stage GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat"
+    script: "chmod a+x travisautomerge.bat"
+    script: "BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=stage GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat"
   
   - stage: Deploy & Merge master
     script: skip #testing is already done
