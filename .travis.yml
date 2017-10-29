@@ -29,6 +29,7 @@ os:
 #- osx
 script: 
 - ./gradlew stage
+- ./gradlew test
 
 - chmod a+x travisautomerge.bat
 - if [ "$TRAVIS_BRANCH" == "dev" ]; then
@@ -39,3 +40,4 @@ script:
 - if [ "$TRAVIS_BRANCH" == "stage" ]; then
   echo "Merging stage into master";
   BRANCHES_TO_MERGE_REGEX='stage' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat; fi
+
