@@ -32,8 +32,8 @@ jobs:
   - if: branch = dev
   - stage: Install dependencys
     script: "./gradlew stage"
-  #- stage: Bulding & Testing
-  #  script: "./gradlew build"
+  - stage: Bulding & Testing
+    script: "./gradlew build"
   - stage: Deploy & Merge to Master
     script: skip
 
