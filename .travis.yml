@@ -34,7 +34,7 @@ jobs:
     script: "./gradlew stage"
   - stage: test
     script: "gradle test"
-  - stage: deploy
+  - stage: deploy & merge master
     script: skip
 
     deploy:
