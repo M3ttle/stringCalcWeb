@@ -28,23 +28,51 @@ os:
 
 stages:
   - name: compile & test
+<<<<<<< HEAD
   - name: deploy & merge master
     if: branch = stage
 
+=======
+  - name: Merge to stage
+    if: branch = dev
+
+stages:
+  - name: compile & test
+  - name: Deploy & Merge master
+    if: branch = stage
+
+
+>>>>>>> dev
 jobs:
   include:
   - stage: compile & test
     script: ./gradlew stage
     script: gradle test
+<<<<<<< HEAD
 
   - stage: deploy & merge master
+=======
+  
+  - stage: Merge to stage
+    script: "chmod a+x travisautomerge.bat"
+    script: "BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=stage GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat"
+  
+  - stage: Deploy & Merge master
+>>>>>>> dev
     script: skip #testing is already done
     deploy:
       provider: heroku
       api_key:
         secure: ns8cTlUbLBtXN1mS6yFOUBh5a+yeG4d6TAXpKyJ3Zt98zLdqikvRh6+UHUHf9RYTxhRlZAfqoRMF53NmUSuPfgny7D/tHBjL3dYGt8cCVsVhZ/Bl73bnXlHsSj9kXAB96JSDVKfRJAuPL/ObDPLycRZljPQAOwItPxZj8svNQgYq7mXS2o6WKIEEz39J4mdCvD1IYUDnBmb0aY9epQ0wrIAyfrR3ePt0WzEWLqjGb8AeVvF9+6CP/s54OC1rYgtWzltfQ0yY2FvHRMeMp+OS/MDUkzkA02We8Ek6p9v9UP5LL1YprKftvkl450f/NPg3Eo3Ul9463uY9kbvwKvK+u7Y9fi4kpD3VUokzRKa3mtb3WOkTMOUU5V3bX2DZp1U/UYbIxfu0hiaMUVVcgLQiWiwDMPLGlaEXjgPr9mqf9YAi1jjiCsD2WUXe8iykr+EHSQHpvLYyNNrfANuyfz5AvSgmPzrj4PaXZumhSNz25MMpHXWeWVX7twZ0p2CjaIk3PMYpyg3+ujYH0v/ymz1h0RbmKQlkw8k9oeKSLzaRY/jMkCMSZdq99rR0dNbk+6Zd+g7F22nsowjV4/HknKKkoRwoeB8mO64eZXgJRCG7ApC2OymjmW6d63m0EhGIGOn9WIR5NknSsQdOTHdhkKrZRF0NkvkPjd2IbOUQniUQ2H0=
       app: stringcalc2
+<<<<<<< HEAD
     after_success:
       script: "chmod a+x travisautomerge.bat"
       script: "BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat"
+=======
+      on: stage
+    after_success:
+      script: "chmod a+x travisautomerge.bat"
+      script: "BRANCHES_TO_MERGE_REGEX='stage' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=M3ttle/stringCalcWeb ./travisautomerge.bat"
+>>>>>>> dev
 
