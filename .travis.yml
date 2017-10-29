@@ -34,7 +34,7 @@ stages:
 stages:
   - name: compile & test
   - name: Deploy & Merge master
-   if: branch = stage
+    if: branch = stage
 
 
 jobs:
