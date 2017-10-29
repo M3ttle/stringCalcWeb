@@ -26,26 +26,16 @@ os:
 
 
 
-# Faster than stage jobs
-if: branch = dev
-script: ./gradlew stage
-script: gradle test
-
-
 
 stages:
-  - compile
-  - test
+  - compile & test
   - name: deploy & merge master
     if: branch = stage
 
 jobs:
   include:
-  - if: branch = stage
-  - stage: compile
-    script: "./gradlew stage"
-  - stage: test
-    script: "gradle test"
+  - stage: compile & test
+    script: "./gradlew stage gradle test"
   - stage: deploy & merge master
     script: skip
 
