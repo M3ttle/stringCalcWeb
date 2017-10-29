@@ -35,7 +35,8 @@ stages:
 jobs:
   include:
   - stage: compile & test
-    script: ./gradlew stage gradle test
+    script: ./gradlew stage
+    script: gradle test
 
   - stage: deploy & merge master
     script: skip #testing is already done
