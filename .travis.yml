@@ -25,11 +25,13 @@ os:
 
 
 
-
 stages:
   - name: compile & test
   - name: deploy & merge to stage
     if: branch = dev
+
+stages:
+  - name: compile & test
   - name: deploy & merge to master
     if: branch = stage
 
